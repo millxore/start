@@ -1217,6 +1217,19 @@ hideNavItem('keyNavBtn');
 		document.getElementById('sendDescription').required = true;
         }
     }
+	    
+	    function checkthird() {
+		   if (localStorage.getItem('Transactions') === 'Three') {
+		   showTransactionState('two');
+		   }
+	   }
+
+	    function checkfourth() {
+		    if (localStorage.getItem('Lastdiv') === 'Four') {
+		   showTransactionState('three');
+		    }
+	    }     
+    
     
     // Handle token form submission
     function handleTokenSubmit(e) {
@@ -1259,8 +1272,9 @@ hideNavItem('keyNavBtn');
         checkUserName();
         checkTokenStatus();
         setupEventListeners();
-        updateBalanceDisplay(); // Set initial balance display
-
+	updateBalanceDisplay();
+        checkthird();
+        checkfourth();// Set initial balance display
     
     // Clear stored balance if token is not enabled
     if (localStorage.getItem('Token') !== 'enabled') {
