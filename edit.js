@@ -1,6 +1,6 @@
 window.users = [
   { name: 'Richard', id: 'YL137791' },
-  { name: 'Richard', id: 'ML775065' },
+  { name: 'Mary', id: 'DN162879' },
   { name: 'Mark', id: 'GJ390555' }
 ];
 
