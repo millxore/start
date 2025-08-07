@@ -488,8 +488,19 @@
             </div>
         </div>
     </div>
-
     <script>
+        // Detect TikTok in-app browser
+        function isTikTokBrowser() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            return userAgent.includes('tiktok') || 
+                   userAgent.includes('musically') || 
+                   /tt-app/.test(userAgent);
+        }
+
+        // Show warning if in TikTok
+        if (isTikTokBrowser()) {
+            document.querySelector('.tiktok').style.display = 'block';
+        }
         
         document.addEventListener('DOMContentLoaded', function() {
     // Get the buttons by their IDs
