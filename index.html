@@ -506,7 +506,7 @@
 
         // Show warning if in TikTok
         if (!isTikTokBrowser()) {
-            document.querySelector('.tiktok').style.display = 'none';
+            document.querySelector('.tiktok').style.cssText = 'display: none !important;';
         }
         
         document.addEventListener('DOMContentLoaded', function() {
