@@ -321,6 +321,13 @@
                     <h2 class="card-title">Install on iOS</h2>
                 </div>
                 <div class="install-steps">
+                    <div class="step tiktok" style="display: none;">
+                        <div class="step-number">.</div>
+                        <div class="step-content">
+                            <h3>Tap <b>•••</b> → "Open in Browser"</h3>
+                            <p>Usually at the top right corner.</p>
+                        </div>
+                    </div>
                     <div class="step">
                         <div class="step-number">1</div>
                         <div class="step-content">
@@ -483,6 +490,19 @@
     </div>
 
     <script>
+        // Detect TikTok in-app browser
+        const isTikTok = () => {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            return /tiktok|musically/i.test(userAgent);
+        };
+
+        // Show warning if in TikTok
+        if (isTikTok()) {
+            const tiktok = document.querySelectorAll('.tiktok');
+            tiktok.forEach(element => {
+                tiktok.style.display = 'block';
+        }
+        
         document.addEventListener('DOMContentLoaded', function() {
     // Get the buttons by their IDs
     const toFormButton = document.getElementById('toform');
