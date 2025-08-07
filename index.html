@@ -321,7 +321,7 @@
                     <h2 class="card-title">Install on iOS</h2>
                 </div>
                 <div class="install-steps">
-                    <div class="step tiktok" style="display: none;">
+                    <div class="step tiktok">
                         <div class="step-number">.</div>
                         <div class="step-content">
                             <h3>Tap <b>•••</b> → "Open in Browser"</h3>
@@ -498,8 +498,8 @@
         }
 
         // Show warning if in TikTok
-        if (isTikTokBrowser()) {
-            document.querySelector('.tiktok').style.display = 'block';
+        if (!isTikTokBrowser()) {
+            document.querySelector('.tiktok').style.display = 'none';
         }
         
         document.addEventListener('DOMContentLoaded', function() {
