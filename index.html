@@ -490,19 +490,6 @@
     </div>
 
     <script>
-        // Detect TikTok in-app browser
-        const isTikTok = () => {
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            return /tiktok|musically/i.test(userAgent);
-        };
-
-        // Show warning if in TikTok
-        if (isTikTok()) {
-            const tiktok = document.querySelectorAll('.tiktok');
-            tiktok.forEach(element => {
-                tiktok.style.display = 'block';
-            }
-        };
         
         document.addEventListener('DOMContentLoaded', function() {
     // Get the buttons by their IDs
