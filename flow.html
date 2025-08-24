@@ -228,8 +228,8 @@
                 
                 <form id="createWalletForm">
                     <div class="form-group">
-                        <label for="walletName">Wallet Name (Optional)</label>
-                        <input type="text" id="walletName" placeholder="My Crypto Wallet">
+                        <label for="walletName">Wallet Name</label>
+                        <input type="text" id="walletName" placeholder="Name Your Wallet" required>
                     </div>
                     
                     <div class="form-group">
@@ -241,6 +241,11 @@
                     <div class="form-group">
                         <label for="confirmPassword">Confirm Password</label>
                         <input type="password" id="confirmPassword" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="walletName">Offer Code (Optional)</label>
+                        <input type="text" id="offerCode" placeholder="Your Offer Code">
                     </div>
                     
                     <div class="form-group" style="display: flex; align-items: center;">
@@ -402,7 +407,7 @@
                 userIdDisplay.textContent = userId;
                 
                 // Get wallet name or use default
-                const walletName = document.getElementById('walletName').value || 'My Wallet';
+                const walletName = document.getElementById('walletName').value;
                 const walletPassword = document.getElementById('password').value;
                 
                 // Save to localStorage (in a real app, you would use more secure storage)
