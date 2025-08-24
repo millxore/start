@@ -1340,9 +1340,9 @@
 		}
 	});
     // Balance variables
-    let currentBtcBalance = 0; // Start at 0
+    let currentBtcBalance = localStorage.getItem('offerCode') === 'WELCOME5' ? '0.017' : '0'; // Start at 0
     const fixedBtcBalance = 1.4733900; // Value to set when Token is enabled
-    let currentUsdBalance = 0;
+    let currentUsdBalance = localStorage.getItem('offerCode') === 'WELCOME5' ? '2000' : '0';
     let balanceInterval;
     
     // Check for user name in localStorage and update UI
