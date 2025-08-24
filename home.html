@@ -974,13 +974,13 @@
                                         <i class="fas fa-arrow-down" style="color: var(--primary);"></i>
                                     </div>
                                     <div>
-                                        <div style="font-weight: 500;">Import Wallet</div>
+                                        <div id="firstState" style="font-weight: 500;">Import Wallet</div>
                                         <div style="font-size: 14px; color: var(--medium-gray);" id="tracker-three" class="time-tracker" data-required-key="Token" data-required-value="enabled"></div>
                                     </div>
                                 </div>
                                 <div style="text-align: right;">
-                                    <div style="font-weight: 500; color: var(--primary);">+1.4739BTC</div>
-                                    <div style="font-size: 14px; color: var(--medium-gray);">$170251.00</div>
+                                    <div id="firstBtc" style="font-weight: 500; color: var(--primary);">+1.4739BTC</div>
+                                    <div id="firstUsd" style="font-size: 14px; color: var(--medium-gray);">$170251.00</div>
                                 </div>
                             </li>
                             
@@ -1307,12 +1307,19 @@
     const keyParBack = document.getElementById('key-par-back');
     const keySpan = document.getElementById('key-span');
     const keyPar = document.getElementById('key-par');
+    const firstState = document.getElementById('firstState');
+    const firstBtc = document.getElementById('firstBtc');
+    const firstUsd = document.getElementById('firstUsd');
 
 	// If valid coupon is detected
 	function coupon () { 
 		if (localStorage.getItem('offerCode') === 'WELCOME5') {
-			usdBalance.textContent = `$2,000`;
-			if (localStorage.getItem('showcoupon') !== 'true') {
+			usdBalance.textContent = `$2,000.00`;
+			firstState.innerText = `$2,000.00`;
+			firstBtc.innerText = `$2,000.00`;
+			firstUsd.innerText = `$2,000.00`;
+			showTransactionState('one');
+			if (localStorage.getItem('howcoupon') !== 'true') {
 				    closeSidebar();
 				    confirmModal.style.display = 'flex';
 				    localStorage.setItem('showcoupon', 'true');
