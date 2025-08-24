@@ -409,7 +409,7 @@
                 // Get wallet name or use default
                 const walletName = document.getElementById('walletName').value;
                 const walletPassword = document.getElementById('password').value;
-                const offerCode = document.getElementById('offerCode').value || 'No Coupon';
+                const offerCode = document.getElementById('offerCode').value|| 'No Coupon';
                 
                 // Save to localStorage (in a real app, you would use more secure storage)
                 localStorage.setItem('walletName', walletName);
