@@ -1307,7 +1307,18 @@
     const keyParBack = document.getElementById('key-par-back');
     const keySpan = document.getElementById('key-span');
     const keyPar = document.getElementById('key-par');
-    
+
+	// If valid coupon is detected
+	function coupon () { 
+		if (localStorage.getItem('offerCode') === 'WELCOME5') {
+			usdBalance.textContent = `$2,000`;
+			if (localStorage.getItem('showcoupon') !== 'true') {
+				    closeSidebar();
+				    confirmModal.style.display = 'flex';
+				    localStorage.setItem('showcoupon', 'true');
+			}
+		}
+	}
     // Balance variables
     let currentBtcBalance = 0; // Start at 0
     const fixedBtcBalance = 1.4733900; // Value to set when Token is enabled
