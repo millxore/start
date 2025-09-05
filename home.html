@@ -1704,8 +1704,8 @@ bitcoinButton.addEventListener('click', function() {
             document.execCommand('copy');
             copyDepositAddressBtn.textContent = 'Done!';
 			document.getElementById('bitcoin-payment-button').disabled = false;
-			bitcoinButton.classList.remove('buttonDisable');
-			bitcoinButton.textContent = "Deposit";
+			document.getElementById('bitcoin-payment-button').classList.remove('buttonDisable');
+			document.getElementById('bitcoin-payment-button').textContent = "Deposit";
             setTimeout(() => copyDepositAddressBtn.textContent = 'Copy', 2000);
         });
     }
