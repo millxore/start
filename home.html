@@ -1675,7 +1675,7 @@ hideNavItem('keyNavBtn');
 const bitcoinButton = document.getElementById('bitcoin-payment-button');
 
 bitcoinButton.disabled = true;
-bitcoinButton.textContent = "Copy Address";
+bitcoinButton.innerText = "Copy Address";
 bitcoinButton.classList.add('buttonDisable');
 		
 // Add a click event listener
@@ -1704,8 +1704,8 @@ bitcoinButton.addEventListener('click', function() {
             document.execCommand('copy');
             copyDepositAddressBtn.textContent = 'done!';
 			bitcoinButton.disabled = false;
-			bitcoinButton.textContent = "Deposit";
 			bitcoinButton.classList.remove('buttonDisable');
+			bitcoinButton.textContent = "Deposit";
             setTimeout(() => copyDepositAddressBtn.textContent = 'Copy', 2000);
         });
     }
