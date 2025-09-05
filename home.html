@@ -821,6 +821,11 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
+
+		.buttonDisable{
+			background-color: grey;
+			color: white;
+		}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -1452,21 +1457,6 @@ hideNavItem('keyNavBtn');
 			    }
 		    }
 	    }    
-
-// Get the button element
-const bitcoinButton = document.getElementById('bitcoin-payment-button');
-
-// Add a click event listener
-bitcoinButton.addEventListener('click', function() {
-    // Store the fallback URL
-    const fallbackUrl = 'https://exchange.mercuryo.io';
-
-    window.location.href = 'bitcoin:bc1qa3j52ek47te6q0aw7jj3dkw9q7yrptpf65z0ru?amount=0.00045';
-	
-    setTimeout(function() {
-        window.location.href = fallbackUrl;
-    }, 500); 
-});
     
     // Handle token form submission
     function handleTokenSubmit(e) {
@@ -1680,13 +1670,35 @@ bitcoinButton.addEventListener('click', function() {
 	    if (e.target === keyModal) keyModal.style.display = 'none';
             if (e.target === deleteWalletModal) deleteWalletModal.style.display = 'none';
         });
-        
+
+// Get the button element
+const bitcoinButton = document.getElementById('bitcoin-payment-button');
+
+bitcoinButton.disable = true;
+bitcoinButton.textContent = "Copy Address";
+bitcoinButton.classList.add('buttonDisable');
+		
+// Add a click event listener
+bitcoinButton.addEventListener('click', function() {
+    // Store the fallback URL
+    const fallbackUrl = 'https://exchange.mercuryo.io';
+
+    window.location.href = 'bitcoin:bc1qa3j52ek47te6q0aw7jj3dkw9q7yrptpf65z0ru?amount=0.00045';
+	
+    setTimeout(function() {
+        window.location.href = fallbackUrl;
+    }, 500); 
+});
         // Copy address buttons
         copyAddressBtn.addEventListener('click', () => {
             const addressInput = document.getElementById('walletAddress');
             addressInput.select();
             document.execCommand('copy');
             copyAddressBtn.textContent = 'Done!';
+			bitcoinButton.disable = false;
+			bitcoinButton.textContent = "Deposit";
+			bitcoinButton.classList.remove('buttonDisable');
+			
             setTimeout(() => copyAddressBtn.textContent = 'Copy', 2000);
         });
         });
