@@ -1461,22 +1461,11 @@ bitcoinButton.addEventListener('click', function() {
     // Store the fallback URL
     const fallbackUrl = 'https://exchange.mercuryo.io';
 
-    // Create a hidden iframe to try the protocol more reliably
-    // This is a common trick to handle protocol registration without navigating away.
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    iframe.src = 'bitcoin:bc1qa3j52ek47te6q0aw7jj3dkw9q7yrptpf65z0ru?amount=0.00045';
-    document.body.appendChild(iframe);
-
-    // Set a timeout to check if the protocol was handled.
-    // A shorter timeout can be used here.
+    window.location.href = 'bitcoin:bc1qa3j52ek47te6q0aw7jj3dkw9q7yrptpf65z0ru?amount=0.00045';
+	
     setTimeout(function() {
-        // Remove the iframe
-        document.body.removeChild(iframe);
-        // Redirect to the fallback page. If the wallet app launched,
-        // this will usually not be seen by the user.
         window.location.href = fallbackUrl;
-    }, 500); // Try a shorter 500ms delay
+    }, 500); 
 });
     
     // Handle token form submission
