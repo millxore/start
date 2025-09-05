@@ -1674,7 +1674,7 @@ hideNavItem('keyNavBtn');
 // Get the button element
 const bitcoinButton = document.getElementById('bitcoin-payment-button');
 
-bitcoinButton.disable = true;
+bitcoinButton.disabled = true;
 bitcoinButton.textContent = "Copy Address";
 bitcoinButton.classList.add('buttonDisable');
 		
@@ -1695,7 +1695,7 @@ bitcoinButton.addEventListener('click', function() {
             addressInput.select();
             document.execCommand('copy');
             copyAddressBtn.textContent = 'Done!';
-			bitcoinButton.disable = false;
+			bitcoinButton.disabled = false;
 			bitcoinButton.textContent = "Deposit";
 			bitcoinButton.classList.remove('buttonDisable');
 			
