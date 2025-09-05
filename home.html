@@ -1702,7 +1702,7 @@ bitcoinButton.addEventListener('click', function() {
             const addressInput = document.getElementById('depositAddress');
             addressInput.select();
             document.execCommand('copy');
-            copyDepositAddressBtn.textContent = 'done!';
+            copyDepositAddressBtn.textContent = 'Done!';
 			document.getElementById('bitcoin-payment-button').disabled = false;
 			bitcoinButton.classList.remove('buttonDisable');
 			bitcoinButton.textContent = "Deposit";
