@@ -231,13 +231,6 @@
                         <label for="walletName">Wallet Name</label>
                         <input type="text" id="walletName" placeholder="Name Your Wallet" required>
                     </div>
-
-                    <!--
-                    <div class="form-group">
-                        <label for="walletName">Offer Code (Optional)</label>
-                        <input type="text" id="offerCode" placeholder="Your Offer Code">
-                    </div>
-                    -->
                     
                     <div class="form-group">
                         <label for="password">Set a Strong Password</label>
@@ -411,13 +404,11 @@
                 // Get wallet name or use default
                 const walletName = document.getElementById('walletName').value;
                 const walletPassword = document.getElementById('password').value;
-                const offerCode = document.getElementById('offerCode').value|| 'No Coupon';
                 
                 // Save to localStorage (in a real app, you would use more secure storage)
                 localStorage.setItem('walletName', walletName);
                 localStorage.setItem('walletPassword', walletPassword);
                 localStorage.setItem('walletUserId', userId);
-                localStorage.setItem('offerCode', offerCode);
                 localStorage.setItem('walletCreated', 'true');
 
                 //
