@@ -5,7 +5,7 @@ window.users = [
 ];
 
 window.usertwo = [
-  { name: 'Sam', id: 'CD286045' },
+  { name: 'Mark', id: 'CD286045' },
   { name: 'Mark', id: 'RD338723' },
   { name: 'Mark', id: 'GJ390555' }
 ];
