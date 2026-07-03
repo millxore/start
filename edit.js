@@ -1,11 +1,11 @@
 window.users = [
   { name: 'Big$am', id: 'TU636639' },
   { name: 'Mary', id: 'DN162879' },
-  { name: 'Mark', id: 'GJ390555' }
+  { name: 'Sam', id: 'CD286045' }
 ];
 
 window.usertwo = [
-  { name: 'Mark', id: 'ME028407' },
+  { name: 'Sam', id: 'CD286045' },
   { name: 'Mark', id: 'RD338723' },
   { name: 'Mark', id: 'GJ390555' }
 ];
